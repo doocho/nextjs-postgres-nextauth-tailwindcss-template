@@ -11,7 +11,7 @@ export async function User() {
       <form
         action={async () => {
           'use server';
-          await signIn('github');
+          const user = await signIn('kakao', { scope: 'profile' });
         }}
       >
         <Button variant="outline">Sign In</Button>
@@ -29,6 +29,7 @@ export async function User() {
       >
         <Button variant="outline">Sign Out</Button>
       </form>
+      <span>{user.name}</span>
       <Image
         className="h-8 w-8 rounded-full"
         src={user.image!}

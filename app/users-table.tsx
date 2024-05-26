@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { SelectUser } from '@/lib/db';
 import { deleteUser } from './actions';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export function UsersTable({
   users,
@@ -33,8 +34,8 @@ export function UsersTable({
           <TableHeader>
             <TableRow>
               <TableHead className="max-w-[150px]">Name</TableHead>
-              <TableHead className="hidden md:table-cell">Email</TableHead>
-              <TableHead className="hidden md:table-cell">Username</TableHead>
+              {/* <TableHead className="hidden md:table-cell">Username</TableHead> */}
+              <TableHead className="hidden md:table-cell">Rank</TableHead>
               <TableHead></TableHead>
             </TableRow>
           </TableHeader>
@@ -64,18 +65,25 @@ function UserRow({ user }: { user: SelectUser }) {
 
   return (
     <TableRow>
+      <TableCell>
+        <Image
+          className="h-8 w-8 rounded-full"
+          src={user.imageUrl!}
+          height={32}
+          width={32}
+          alt={`${user.name} avatar`}
+        />
+      </TableCell>
       <TableCell className="font-medium">{user.name}</TableCell>
-      <TableCell className="hidden md:table-cell">{user.email}</TableCell>
-      <TableCell>{user.username}</TableCell>
+      <TableCell>{user.rank ? user.rank : '당첨되지 않음'}</TableCell>
       <TableCell>
         <Button
           className="w-full"
           size="sm"
           variant="outline"
           formAction={deleteUserWithId}
-          disabled
         >
-          Delete
+          1등 예상
         </Button>
       </TableCell>
     </TableRow>

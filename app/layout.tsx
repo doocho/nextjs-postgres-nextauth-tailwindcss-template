@@ -24,13 +24,13 @@ export default function RootLayout({
           <div className="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
             <div className="flex h-full max-h-screen flex-col gap-2">
               <div className="flex h-[60px] items-center border-b px-5">
-                <Link
+                {/* <Link
                   className="flex items-center gap-2 font-semibold"
                   href="/"
                 >
                   <Logo />
-                  <span className="">ACME</span>
-                </Link>
+                </Link> */}
+                <span className="">SITE11</span>
               </div>
               <div className="flex-1 overflow-auto py-2">
                 <nav className="grid items-start px-4 text-sm font-medium">
@@ -38,14 +38,14 @@ export default function RootLayout({
                     <UsersIcon className="h-4 w-4" />
                     Users
                   </NavItem>
-                  <NavItem href="/settings">
+                  {/* <NavItem href="/settings">
                     <SettingsIcon className="h-4 w-4" />
                     Settings
                   </NavItem>
                   <NavItem href="https://vercel.com/templates/next.js/admin-dashboard-tailwind-postgres-react-nextjs">
                     <VercelLogo className="h-4 w-4" />
                     Deploy
-                  </NavItem>
+                  </NavItem> */}
                 </nav>
               </div>
             </div>
@@ -56,8 +56,7 @@ export default function RootLayout({
                 className="flex items-center gap-2 font-semibold lg:hidden"
                 href="/"
               >
-                <Logo />
-                <span className="">ACME</span>
+                <span className="">SITE11</span>
               </Link>
               <User />
             </header>

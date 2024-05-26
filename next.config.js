@@ -9,6 +9,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'avatar.vercel.sh'
+      },
+      {
+        protocol: 'http',
+        hostname: 'k.kakaocdn.net',
       }
     ]
   }
