@@ -103,8 +103,8 @@ export async function updateTreasureByRank(
   }
   const winnerInfo = await db
     .select()
-    .from(users)
-    .where(eq(users.name, winner));
+    .from(treasure)
+    .where(eq(treasure.winner, winner));
   if (winnerInfo.length !== 0) {
     throw new Error('이미 수령하셨습니다.');
   }
